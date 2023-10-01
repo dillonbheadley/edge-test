@@ -1,0 +1,25 @@
+[dev]
+  framework = "#static"
+
+[build]
+  command = "echo No build for this site, we are living on the edge"
+  publish = "public"
+  edge_functions = "src/edge-functions"
+
+[context.production]
+  environment = { MY_IMPORTANT_VARIABLE = "this is a very important secret" }
+
+# The URL for each edge function
+[[edge_functions]]
+  function = "page-home"
+  path = "/"
+
+[[edge_functions]]
+  function = "count"
+  path = "/count"
+
+[[edge_functions]]
+  function = "todos"
+  path = "/todos"
+
+  
