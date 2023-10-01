@@ -1,6 +1,6 @@
 import { html } from "../utils.js";
 
-export default function Todo({ todoId, title, done }) {
+export default function Todo({ todo: { id, title, done } }) {
   return html`
     <article class="todo-item">
       <label>
@@ -13,7 +13,7 @@ export default function Todo({ todoId, title, done }) {
           hx-target="closest .todo-item"
           checked=${done === "on"}
         />
-        <input type="hidden" name="id" value=${todoId} />
+        <input type="hidden" name="id" value=${id} />
         ${done
           ? html` <p class="todo-title"><s>${title}</s></p> `
           : html` <p class="todo-title">${title}</p> `}

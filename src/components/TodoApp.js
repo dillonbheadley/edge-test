@@ -1,5 +1,5 @@
+import { makeTodo } from "../edge-functions/todos.js";
 import { html } from "../utils.js";
-import Todo from "./Todo.js";
 
 export default function TodoApp({ todos = [] }) {
   return html`
@@ -15,13 +15,7 @@ export default function TodoApp({ todos = [] }) {
         <input type="text" name="new-todo" id="new-todo" required />
         <button>add</button>
       </form>
-      <div id="todos-list">
-        ${todos.map(
-          ({ id, title, done }) => html`
-            <${Todo} todoId=${id} title="${title}" done="${done}" />
-          `
-        )}
-      </div>
+      <div id="todos-list">${todos.map(makeTodo)}</div>
     </div>
   `;
 }

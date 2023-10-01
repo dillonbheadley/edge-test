@@ -1,12 +1,8 @@
 import Todo from "../components/Todo.js";
 import { html } from "../utils.js";
 
-function makeTodo(todo) {
-  return html`<${Todo}
-    todoId=${todo.id}
-    title=${todo.title}
-    done=${todo.done}
-  />`;
+export function makeTodo(todo) {
+  return html`<${Todo} todo=${todo} />`;
 }
 
 export default async (req, context) => {
