@@ -3,7 +3,7 @@ import TodoApp from "../components/TodoApp.js";
 import { html } from "../utils.js";
 
 export default (req, context) => {
-  const count = context.cookies.get("count") || 0;
+  const count = context.cookies.get("count") || "0";
 
   const todos = context.cookies.get("todos")
     ? JSON.parse(atob(context.cookies.get("todos")))
