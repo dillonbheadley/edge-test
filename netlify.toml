@@ -10,16 +10,16 @@
   environment = { MY_IMPORTANT_VARIABLE = "this is a very important secret" }
 
 # The URL for each edge function
-[[edge_functions]]
-  function = "page-home"
-  path = "/"
+# [[edge_functions]]
+#   function = "page-home"
+#   path = "/"
 
-[[edge_functions]]
-  function = "count"
-  path = "/count"
+# [[edge_functions]]
+#   function = "count"
+#   path = "/count"
 
-[[edge_functions]]
-  function = "todos"
-  path = "/todos"
+# [[edge_functions]]
+#   function = "todos"
+#   path = "/todos"
 
   

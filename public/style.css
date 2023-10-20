@@ -12,3 +12,7 @@
     gap: 1rem;
   }
 }
+
+[disabled] {
+  opacity: 0.5;
+}

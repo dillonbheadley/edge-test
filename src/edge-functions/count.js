@@ -1,5 +1,7 @@
 import { html } from "../utils.js";
 
+export const config = { path: "/count" };
+
 export default (req, context) => {
   if (req.method === "POST") {
     const count = context.cookies.get("count") || 0;

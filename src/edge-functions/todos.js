@@ -1,6 +1,8 @@
 import Todo from "../components/Todo.js";
 import { html } from "../utils.js";
 
+export const config = { path: "/todos" };
+
 export function makeTodo(todo) {
   return html`<${Todo} todo=${todo} />`;
 }
@@ -19,6 +21,7 @@ export default async (req, context) => {
 
   if (req.method === "POST") {
     const data = await req.formData();
+
     if (!data) {
       return new Response("", {
         headers: { "content-type": "text/html" },

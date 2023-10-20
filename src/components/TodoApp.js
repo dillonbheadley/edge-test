@@ -10,10 +10,11 @@ export default function TodoApp({ todos = [] }) {
         hx-target="#todos-list"
         hx-swap="beforeend"
         hx-on:submit="this['new-todo'].value = ''"
+        hx-disabled-elt="#add-todo-btn"
       >
         <p id="todo-message"></p>
         <input type="text" name="new-todo" id="new-todo" required />
-        <button>add</button>
+        <button id="add-todo-btn">add</button>
       </form>
       <div id="todos-list">${todos.map(makeTodo)}</div>
     </div>
